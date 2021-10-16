@@ -1,5 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from "./pages/main";
+import Profile from "./pages/profile";
+import Login from "./pages/login"
+import Pokemons from './pages/pokemons';
 
 import {
   BrowserRouter as Router,
@@ -11,11 +14,14 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/login">
+          <Login/>
+        </Route>
         <Route path="/profile">
           <Profile/>
         </Route>
-        <Route path="/login">
-          <Login/>
+        <Route path="/pokemons">
+          <Pokemons/>
         </Route>
         <Route path="/">
           <Main/>
