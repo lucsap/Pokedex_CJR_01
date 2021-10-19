@@ -1,17 +1,55 @@
-import {Helmet} from "react-helmet";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Pokemon from '../components/Pokemon';
 
-export default function Main() {
+function Main(){
+      const [pages,setPage] = useState(1)
+      const [pokemons,setPokemon] = useState([])
 
-    return (
-        <div>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Pokédex</title>
-                <link rel="canonical" href="http://mysite.com/example" />
-                <meta name="description" content="teste de title para a main" />
-            </Helmet>
-            <h1>Ideias</h1>
-            <p>Como começamos nossa página principal?</p>
-        </div>
-    )
+      async function getPokemons(){
+        axios.get("https://pokedex20201.herokuapp.com/pokemons?page="+pages)
+        .then((resp)=>{
+          console.log("Debuglist",resp)
+          setPokemon(resp.data.data)
+          console.log("Pokelist:",pokemons)
+          pokemons_list.push(pokemons)
+        })// eslint-disable-next-line
+      }
+
+      useEffect(()=>{
+          getPokemons()
+          nextPage()
+        },[])
+        
+
+      const nextPage = ()=>{
+        if (pages < 33){
+          console.log(pages)
+          setPage(pages+1)
+          console.log(pokemons)
+        }
+        else{
+          console.log(pages)
+          setPage(1)
+          console.log(pokemons)
+        }
+        getPokemons()
+        
+      }
+
+      function changeBackground(){
+        console.log("ALERTA")
+      }
+
+    return(
+    <div className="App">
+      <h1>Pokedex</h1>
+      <Pokemon pk={pokemons}/>
+      <br/>
+      <input type="button" value="Next Page" onClick={nextPage}/>
+      <h1>{pages-1}</h1>
+    </div>
+  )
 }
+
+export default Main
