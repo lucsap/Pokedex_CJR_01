@@ -12,7 +12,6 @@ function Main(){
           console.log("Debuglist",resp)
           setPokemon(resp.data.data)
           console.log("Pokelist:",pokemons)
-          pokemons_list.push(pokemons)
         })// eslint-disable-next-line
       }
 
