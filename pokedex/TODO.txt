@@ -1,0 +1,13 @@
+Lista de funções para serem implementadas:
+
+User management:
+POST /users
+GET /users/:username
+
+Favoritos:
+POST https://pokedex20201.herokuapp.com/users/:username/starred/:pokemon
+-> definir design do botão de favoritar
+
+Estética:
+onMouseOver -> descobrir uma forma de criar um highlight em um pokemon ao passar o mouse por cima
+onClick -> criar uma função que exibe o pokemon em destaque quando ele é clicado
