@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Pokemon from '../components/Pokemon';
+import Titles from '../components/helmet'
 
 function Main(){
       const [pages,setPage] = useState(1)
@@ -42,7 +43,8 @@ function Main(){
 
     return(
     <div className="App">
-      <h1>Pokedex</h1>
+      <Titles title={"Pokedex - Home"} />
+      <h1>Pokédex</h1>
       <Pokemon pk={pokemons}/>
       <br/>
       <input type="button" value="Next Page" onClick={nextPage}/>

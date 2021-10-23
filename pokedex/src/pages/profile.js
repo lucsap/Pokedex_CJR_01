@@ -1,7 +1,10 @@
+import Titles from "../components/Pokemon"
+
 export default function Profile() {
 
     return (
         <div>
+            <Titles title={"Perfil"} />
             <div className="menu">
                 <li>Pokémons</li>
                 <li>Perfil</li>
