@@ -7,6 +7,12 @@ function Main(){
       const [pages,setPage] = useState(1)
       const [pokemons,setPokemon] = useState([])
 
+      // Pegar usuários
+      useEffect(()=>{
+        const resp = axios.get("https://pokedex20201.herokuapp.com/users/")
+        console.log(resp)
+      }, [])
+
       async function getPokemons(){
         axios.get("https://pokedex20201.herokuapp.com/pokemons?page="+pages)
         .then((resp)=>{
