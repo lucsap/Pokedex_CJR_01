@@ -4,14 +4,11 @@ export default function Login() {
 
     return (
         <div>
-        <Titles title={"Login"} />
-            <h1>Login</h1>
-            <form>
-                <labe>Insira seu nome de usuário</labe>
-                <input></input>
-                <br/>
-                <button>Fazer login</button>
-            </form>
+            <Titles title={"Login"} />
+            <h1>Cadastre-se ou faça Login</h1>
+            <input placeholder="Nome de usuário"></input>
+            <br/>
+            <button>Fazer login</button>
         </div>
     )
 }

@@ -42,14 +42,17 @@ function Main(){
       }
 
     return(
-    <div className="App">
-      <Titles title={"Pokedex - Home"} />
-      <h1>Pokédex</h1>
-      <Pokemon pk={pokemons}/>
-      <br/>
-      <input type="button" value="Next Page" onClick={nextPage}/>
-      <h1>{pages-1}</h1>
-    </div>
+      <div className="App">
+        <div>
+          <h1>Nav bar</h1>
+        </div>
+        <Titles title={"Pokedex - Home"} />
+        <h1>Pokédex</h1>
+        <Pokemon pk={pokemons}/>
+        <br/>
+        <input type="button" value="Next Page" onClick={nextPage}/>
+        <h1>{pages-1}</h1>
+      </div>
   )
 }
 
