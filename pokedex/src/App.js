@@ -1,7 +1,6 @@
 import './App.css';
 import Main from "./pages/main";
-import Profile from "./pages/profile";
-import Login from "./pages/login"
+import Login from "./pages/login";
 import Pokemons from './pages/pokemons';
 
 import {

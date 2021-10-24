@@ -9,4 +9,4 @@ export const LoginStyles = styled.h1`
 
 export const Contents = styled.div`
   text-align: center;
-`
+`;

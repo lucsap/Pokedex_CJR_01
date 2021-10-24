@@ -1,6 +1,6 @@
+import api from '../resources/api';
 import Titles from "../components/helmet"
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { LoginStyles, Contents } from '../styles/login'
 
 function Login() {
@@ -9,18 +9,8 @@ function Login() {
     const [value, setValue] = useState("")
     const [criar, setCriar] = useState("")
 
-    // Pegar usuários
-    // useEffect(()=>{
-    //     axios.get("https://pokedex20201.herokuapp.com/users/"+value)
-    //     .then((resp)=>{
-    //         console.log(resp.data)
-    //         console.log(resp.data[0])
-    //         setUsers(resp.data)
-    //     })
-    // }, [])
-
     function handleSubmit() {
-        axios.get("https://pokedex20201.herokuapp.com/users/" + value)
+        api.get("/users/" + value)
         .then((resp)=>{
             console.log(resp.data.user.username)
             setUsers(resp.data.user.username)
@@ -29,7 +19,7 @@ function Login() {
     }
 
     function handleCreate() {
-        axios.post("https://pokedex20201.herokuapp.com/users/", {username: value})
+        api.post("/users/", {username: value})
         .then((resp)=>{
             window.alert('deu bom')
             setUsers(resp.data)
