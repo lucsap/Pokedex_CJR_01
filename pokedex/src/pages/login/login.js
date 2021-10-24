@@ -1,7 +1,7 @@
-import api from '../resources/api';
-import Titles from "../components/helmet"
+import api from '../../resources/api';
+import Titles from "../../components/helmet"
 import { useEffect, useState } from 'react';
-import { LoginStyles, Contents } from '../styles/login'
+import { LoginStyles, Contents } from './styles_login'
 
 function Login() {
 

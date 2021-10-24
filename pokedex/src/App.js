@@ -1,7 +1,7 @@
 import './App.css';
-import Main from "./pages/main";
-import Login from "./pages/login";
-import Pokemons from './pages/pokemons';
+import Main from "./pages/main/main";
+import Login from "./pages/login/login";
+import Pokemons from './pages/pokemons/pokemons';
 
 import {
   BrowserRouter as Router,

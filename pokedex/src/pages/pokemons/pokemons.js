@@ -1,5 +1,5 @@
-import Titles from '../components/helmet'
-import Navbar from '../components/navbar'
+import Titles from '../../components/helmet'
+import Navbar from '../../components/navbar'
 
 export default function Pokemons() {
 

@@ -1,8 +1,8 @@
-import axios from 'axios';
+import api from '../../resources/api';
 import { useEffect, useState } from 'react';
-import Pokemon from '../components/Pokemon';
-import Titles from '../components/helmet'
-import Navbar from '../components/navbar';
+import Pokemon from '../../components/Pokemon';
+import Titles from '../../components/helmet';
+import Navbar from '../../components/navbar';
 
 function Main(){
       const [pages,setPage] = useState(1)
@@ -11,12 +11,12 @@ function Main(){
 
       // Pegar usuários
       useEffect(()=>{
-        const resp = axios.get("https://pokedex20201.herokuapp.com/users/")
+        const resp = api.get("/users/")
         console.log(resp)
       }, [])
 
       async function getPokemons(){
-        axios.get("https://pokedex20201.herokuapp.com/pokemons?page="+pages)
+        api.get("/pokemons?page="+pages)
         .then((resp)=>{
           console.log("Debuglist",resp)
           setPokemon(resp.data.data)
