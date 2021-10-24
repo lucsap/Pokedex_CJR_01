@@ -12,7 +12,7 @@ export const Menu = styled.header`
 
 export const A = styled.a`
     display: inline-block;
-    color: blue;
+    color: black;
     font-size: 1.3rem;
     text-decoration: none;
     text-align: right;
@@ -25,9 +25,9 @@ function Navbar() {
     return(
         <Menu>
             <ul>
-                <A href="../main">Início</A>
-                <A href="../pokemons">Perfil</A>
-                <A href="../login">Sair</A>
+                <A href="../main"><IoHomeOutline/> Início</A>
+                <A href="../pokemons"><CgProfile/> Perfil</A>
+                <A href="../login"><IoExitOutline/> Sair</A>
             </ul>
         </Menu>
     )
