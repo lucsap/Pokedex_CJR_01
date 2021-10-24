@@ -1,16 +1,29 @@
-function Navbar() {
-    
+import styled from 'styled-components'
 
+export const Menu = styled.header`
+    align-items: center;
+    text-decoration: none;
+    background-color: yellow;
+`
+
+export const A = styled.a`
+    display: inline-block;
+    color: blue;
+    text-decoration: none;
+    padding: 1.0rem;
+    text-align: right;
+`
+
+function Navbar() {
+        
     return(
-        <div className="Navbar">
+        <Menu>
             <ul>
-                <li><a href="../main">Início</a></li>
-                <br/>
-                <li><a href="../pokemons">Perfil</a></li>
-                <br/>
-                <li><a href="../login">Sair</a></li>
+                <A href="../main">Início</A>
+                <A href="../pokemons">Perfil</A>
+                <A href="../login">Sair</A>
             </ul>
-        </div>
+        </Menu>
     )
 }
 

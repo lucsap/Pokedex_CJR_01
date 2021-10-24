@@ -61,8 +61,10 @@ function Main(){
             <li><a href="/login">Sair</a></li>
           </ul>
         </div> */}
-        <Navbar />
-        {user}
+        <div>
+          <Navbar />
+          <h2>Olá {user}!</h2>
+        </div>
         <Titles title={"Pokedex - Home"} />
         <h1>Pokédex</h1>
         <Pokemon pk={pokemons}/>

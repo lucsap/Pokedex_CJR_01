@@ -5,7 +5,7 @@ import { LoginStyles, Contents } from './styles_login'
 
 function Login() {
 
-    const [setUsers] = useState("")
+    const [user, setUsers] = useState("")
     const [value, setValue] = useState("")
     const [criar, setCriar] = useState("")
 
