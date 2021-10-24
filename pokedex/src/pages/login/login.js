@@ -1,11 +1,11 @@
 import api from '../../resources/api';
 import Titles from "../../components/helmet"
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LoginStyles, Contents } from './styles_login'
 
 function Login() {
 
-    const [users, setUsers] = useState("")
+    const [setUsers] = useState("")
     const [value, setValue] = useState("")
     const [criar, setCriar] = useState("")
 
@@ -15,7 +15,10 @@ function Login() {
             console.log(resp.data.user.username)
             setUsers(resp.data.user.username)
             localStorage.setItem('user', value);
-        }).catch(window.alert('deu ruim'))
+        }).catch((err)=>{
+            // redirecionar página
+            window.alert("Ocorreu um erro" + err)
+        })
     }
 
     function handleCreate() {

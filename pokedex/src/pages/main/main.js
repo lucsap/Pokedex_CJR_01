@@ -62,6 +62,7 @@ function Main(){
           </ul>
         </div> */}
         <Navbar />
+        {user}
         <Titles title={"Pokedex - Home"} />
         <h1>Pokédex</h1>
         <Pokemon pk={pokemons}/>
