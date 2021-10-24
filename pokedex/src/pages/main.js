@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Pokemon from '../components/Pokemon';
 import Titles from '../components/helmet'
+import Navbar from '../components/navbar';
 
 function Main(){
       const [pages,setPage] = useState(1)
@@ -47,11 +48,19 @@ function Main(){
         console.log("ALERTA")
       }
 
-    return(
+    return (
       <div className="App">
-        <div>
-          <h1>Nav bar</h1>
-        </div>
+        {/* <div className="Navbar"> */}
+          {/* <h1>Nav bar</h1> */}
+          {/* <ul>
+            <li><a href="/main">Início</a></li>
+            <br/>
+            <li><a href="/pokemons">Perfil</a></li>
+            <br/>
+            <li><a href="/login">Sair</a></li>
+          </ul>
+        </div> */}
+        <Navbar />
         <Titles title={"Pokedex - Home"} />
         <h1>Pokédex</h1>
         <Pokemon pk={pokemons}/>

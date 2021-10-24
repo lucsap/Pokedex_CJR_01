@@ -1,11 +1,13 @@
 import Titles from '../components/helmet'
+import Navbar from '../components/navbar'
 
 export default function Pokemons() {
 
     return (
         <div>
             <Titles title={"Pokémons favoritos"} />
-            <h1>Pokémons</h1>
+            <Navbar />
+            <h1>Favoritos</h1>
         </div>
     )
 }
