@@ -5,8 +5,8 @@ export const LoginStyles = styled.h1`
   background-color: yellow;
   text-align: center;
   align-content: center;
-  `;
+`;
 
 export const Contents = styled.div`
-text-align: center;
+  text-align: center;
 `

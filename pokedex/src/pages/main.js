@@ -7,6 +7,7 @@ import Navbar from '../components/navbar';
 function Main(){
       const [pages,setPage] = useState(1)
       const [pokemons,setPokemon] = useState([])
+      const user = localStorage.getItem('user'); // tem o usuário logado
 
       // Pegar usuários
       useEffect(()=>{

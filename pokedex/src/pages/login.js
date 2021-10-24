@@ -1,7 +1,7 @@
 import Titles from "../components/helmet"
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { LoginStyles } from '../components/login'
+import { LoginStyles, Contents } from '../styles/login'
 
 function Login() {
 
@@ -17,13 +17,14 @@ function Login() {
     //         console.log(resp.data[0])
     //         setUsers(resp.data)
     //     })
-    //   }, [])
+    // }, [])
 
     function handleSubmit() {
         axios.get("https://pokedex20201.herokuapp.com/users/" + value)
         .then((resp)=>{
             console.log(resp.data.user.username)
             setUsers(resp.data.user.username)
+            localStorage.setItem('user', value);
         }).catch(window.alert('deu ruim'))
     }
 
@@ -39,7 +40,7 @@ function Login() {
         <div className="bodyLogin">
             <Titles title={"Login"} />
             <LoginStyles>Cadastre-se ou faça Login</LoginStyles>
-            <div className="contents">
+            <Contents>
                 <label placeholder="" onChange="">Entrar: </label>
                 <input
                 type="text"
@@ -56,7 +57,7 @@ function Login() {
                 <br/>
                 <button onClick={handleSubmit}>Fazer login</button>
                 <button onClick={handleCreate}>Criar usuário</button>
-            </div>
+            </Contents>
             
         </div>
     )
