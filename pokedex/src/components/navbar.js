@@ -1,17 +1,20 @@
 import styled from 'styled-components'
 
 export const Menu = styled.header`
-    align-items: center;
+    text-align: right;
     text-decoration: none;
-    background-color: yellow;
+    background-color: #F5E750;
+    border-radius: 1rem;
+    margin: 1rem;
 `
 
 export const A = styled.a`
     display: inline-block;
     color: blue;
     text-decoration: none;
-    padding: 1.0rem;
     text-align: right;
+    margin: 1rem;
+    padding: 1rem 2rem;
 `
 
 function Navbar() {

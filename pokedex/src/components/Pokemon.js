@@ -2,17 +2,17 @@ import styled from "styled-components"
 //import LinearGradient from "react-native-linear-gradient"
 
 const Li = styled.li`
-    width: 180px;
-    margin-left: auto;
-    margin-right: 15px;
-    border-radius: ${props => `${props.rd}px`};
-    margin-bottom: 16px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: rgb(196, 196, 197);
-    list-style-type: none;
-    display: inline-block;
-    border-color: white;
+  width: 180px;
+  margin-left: auto;
+  margin-right: 15px;
+  border-radius: ${props => `${props.rd}px`};
+  margin-bottom: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgb(196, 196, 197);
+  list-style-type: none;
+  display: inline-block;
+  border-color: white;
 `
 
 const Line = styled.line`
