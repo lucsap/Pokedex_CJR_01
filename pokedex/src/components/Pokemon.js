@@ -24,7 +24,7 @@ const Line = styled.line`
   padding-top: 1px;
   padding-right: 5px;
   padding-bottom: 4px;
-  background: ${props => `${props.bg}`};
+  background: ${props => `${props.pkid==props.pkidhover ? null : props.bg}`};
   list-style-type: none;
 `
 
@@ -62,13 +62,13 @@ function Alerta(){
       if (temp.length > 1){
         return (
           <>
-            <Line bg={type_color[temp[0]]}>{temp[0]}</Line>
-            <Line bg={type_color[temp[1]]}>{temp[1]}</Line>
+            <Line bg={type_color[temp[0]]} pkidhover={pokeId} pkid={pkm.id}> {temp[0]} </Line>
+            <Line bg={type_color[temp[1]]} pkidhover={pokeId} pkid={pkm.id}> {temp[1]} </Line>
           </>
         )}
       else{
         return(
-            <Line bg={type_color[temp[0]]}>{temp[0]}</Line>
+            <Line bg={type_color[temp[0]]} pkidhover={pokeId} pkid={pkm.id}> {temp[0]} </Line>
         )
       }
     }
