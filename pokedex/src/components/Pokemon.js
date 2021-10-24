@@ -1,18 +1,17 @@
+import { useState } from "react"
 import styled from "styled-components"
-//import LinearGradient from "react-native-linear-gradient"
 
 const Li = styled.li`
     width: 180px;
     margin-left: auto;
     margin-right: 15px;
-    border-radius: ${props => `${props.rd}px`};
+    border-radius: ${props => `${(props.pkid==props.pkidhover ? 50 : 10)}px`};
     margin-bottom: 16px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background: rgb(196, 196, 197);
+    background-image: linear-gradient(-45deg,${props => props.pkid==props.pkidhover ? (`${props.kindcol[props.kindp[0]]},${(props.kindp.length==2 ? props.kindcol[props.kindp[1]] : props.kindcol[props.kindp[0]])}`): `${"#2d2d2d"},${"#2d2d2d"}`});
     list-style-type: none;
     display: inline-block;
-    border-color: white;
 `
 
 const Line = styled.line`
@@ -25,12 +24,8 @@ const Line = styled.line`
   padding-top: 1px;
   padding-right: 5px;
   padding-bottom: 4px;
-  background: ${props => `${props.bg}`};
+  background: ${props => `${props.pkid==props.pkidhover ? null : props.bg}`};
   list-style-type: none;
-`
-
-const Div = styled.div`
-  display: inline-block;
 `
 
 function Pokemon(props){
@@ -54,20 +49,12 @@ function Pokemon(props){
     "dragon": "#43372D",
     "dark": "#707070"
 }
-    function Alerta(){
-      console.log("ALERTA")
-    }
-    
-    var radius = 30
 
-    function getKind(pkm){
-      var temp = pkm.kind.split(";")
-      if (temp.length > 1){
-        return type_color[temp[0]]
-      }
-      else{
-        return type_color[pkm.kind]
-      }
+const [radius, setRadius] = useState(30);
+const [pokeId,setPokeId] = useState(0);
+
+function Alerta(){
+      console.log("ALERTA")
     }
     
     function splitKind(pkm){
@@ -75,25 +62,28 @@ function Pokemon(props){
       if (temp.length > 1){
         return (
           <>
-            <Line bg={type_color[temp[0]]}>{temp[0]}</Line>
-            <Line bg={type_color[temp[1]]}>{temp[1]}</Line>
+            <Line bg={type_color[temp[0]]} pkidhover={pokeId} pkid={pkm.id}> {temp[0]} </Line>
+            <Line bg={type_color[temp[1]]} pkidhover={pokeId} pkid={pkm.id}> {temp[1]} </Line>
           </>
         )}
       else{
         return(
-            <Line bg={type_color[temp[0]]}>{temp[0]}</Line>
+            <Line bg={type_color[temp[0]]} pkidhover={pokeId} pkid={pkm.id}> {temp[0]} </Line>
         )
       }
     }
 
     // reestruturar html
 
-    return(
+    return (
       <>
         {props.pk.map(
           (pkm)=>
-          <Li onClick={Alerta} onMouseOver={Alerta} rd={radius}>
-
+            <Li
+            onClick={Alerta} onMouseEnter={() => setPokeId(pkm.id)} onMouseLeave={() => setPokeId(0)} 
+            pkidhover={pokeId} pkid={pkm.id} rd={radius} kindcol={type_color}
+            kindp={pkm.kind.split(";")}
+            >
             {pkm.name}
             <br/>
             <img src={pkm.image_url}/>
@@ -103,6 +93,7 @@ function Pokemon(props){
         )}
       </>
     )
-  }
+    
+}
 
 export default Pokemon
