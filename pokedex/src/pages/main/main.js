@@ -3,10 +3,28 @@ import { useEffect, useState } from 'react';
 import Pokemon from '../../components/Pokemon';
 import Titles from '../../components/helmet';
 import Navbar from '../../components/navbar';
+import { CgPokemon } from 'react-icons/cg';
+import styled from 'styled-components';
+
+const Input = styled.div`
+  background-color: rgb(255,0,68);
+  color: black;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  text-decoration: black;
+  &:hover {
+    background-color: #ffbf00;
+  }
+`;
 
 function Main(){
       const [pages,setPage] = useState(1)
       const [pokemons,setPokemon] = useState([])
+      const [fvpkm, setFvpkm] = useState([])
       const user = localStorage.getItem('user'); // tem o usuário logado
 
       // Pegar usuários
@@ -15,7 +33,16 @@ function Main(){
         console.log(resp)
       }, [])
 
-      async function getPokemons(){
+      function getFavPokemons(){
+        api.get("https://pokedex20201.herokuapp.com/users/"+user)
+        .then((resp)=>{
+          console.log("Debugfav",resp)
+          setFvpkm(resp.data.pokemons)
+          console.log("Favlist:",fvpkm)
+        })// eslint-disable-next-line
+      }
+
+      function getPokemons(){
         api.get("/pokemons?page="+pages)
         .then((resp)=>{
           console.log("Debuglist",resp)
@@ -45,8 +72,27 @@ function Main(){
         
       }
 
+      const prevPage = ()=>{
+        if (pages > -1){
+          console.log(pages)
+          setPage(pages-1)
+          console.log(pokemons)
+        }
+        getPokemons()
+        
+      }
+
       function changeBackground(){
         console.log("ALERTA")
+      }
+
+      function isLogged() {
+        if (user){
+          return "Sair"
+        }
+        else {
+          return "Logar"
+        }
       }
 
     return (
@@ -62,15 +108,19 @@ function Main(){
           </ul>
         </div> */}
         <div>
-          <Navbar />
+          <Navbar us={isLogged}/>
           <h2>Olá {user}!</h2>
         </div>
         <Titles title={"Pokedex - Home"} />
         <h1>Pokédex</h1>
-        <Pokemon pk={pokemons}/>
+        <Input type="button"  onClick={prevPage}> &larr; Página anterior </Input>
+        <Input type="button" onClick={nextPage}> Próxima página &rarr; </Input>
         <br/>
-        <input type="button" value="Next Page" onClick={nextPage}/>
-        <h1>{pages-1}</h1>
+        <br/>
+        <Pokemon pk={pokemons} us={user}/>
+        <br/>
+        <Input type="button"  onClick={prevPage}> &larr; Página anterior </Input>
+        <Input type="button" onClick={nextPage}> Próxima página &rarr; </Input>
       </div>
   )
 }
