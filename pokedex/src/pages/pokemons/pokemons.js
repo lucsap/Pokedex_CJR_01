@@ -2,6 +2,8 @@ import Titles from '../../components/helmet'
 import Navbar from '../../components/navbar'
 import Pokemon from '../../components/Pokemon'
 import api from '../../resources/api';
+import { Hi } from '../main/styles_main';
+
 
 import { useState,useEffect } from 'react'
 
@@ -26,7 +28,9 @@ export default function Pokemons(props) {
         <div className="App">
             <Titles title={"Pokémons favoritos"} />
             <Navbar />
-            <h1>Seus Pokemons</h1>
+            <Hi>
+              <h1>Seus Pokemons</h1>
+            </Hi>
             <Pokemon pk={fvpkm}/>
         </div>
     )
