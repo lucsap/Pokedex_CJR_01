@@ -9,7 +9,10 @@ export const LoginStyles = styled.h1`
 `;
 
 export const LoginLabel = styled.div`
-
+  color: white;
+`
+export const Input = styled.input`
+  border-radius: 0.3rem;
 `
 
 export const LoginButton = styled.div`

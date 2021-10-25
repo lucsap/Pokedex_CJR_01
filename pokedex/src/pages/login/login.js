@@ -1,7 +1,7 @@
 import api from '../../resources/api';
 import Titles from "../../components/helmet"
 import { useState } from 'react';
-import { LoginStyles, Contents , LoginButton } from './styles_login'
+import { LoginStyles, Contents , LoginButton, Input, LoginLabel } from './styles_login'
 
 function Login() {
 
@@ -34,14 +34,14 @@ function Login() {
             <Titles title={"Login"} />
             <LoginStyles>Cadastre-se ou faça Login</LoginStyles>
             <Contents>
-                <label placeholder="" onChange="">Entrar: </label>
-                <input
+                <LoginLabel placeholder="" onChange="">Entrar: </LoginLabel>
+                <Input
                 type="text"
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 />
-                <label >Criar conta: </label>
-                <input
+                <LoginLabel >Criar conta: </LoginLabel>
+                <Input
                 type="text"
                 value={criar}
                 onChange={e => setCriar(e.target.value)}
@@ -49,8 +49,8 @@ function Login() {
                 <br/>
                 <br/>
                 <form method="get" action="../main/main">
-                    <button type="submit" onClick={handleSubmit}>Fazer login</button>
-                    <button type="submit" onClick={handleCreate}>Criar usuário</button>
+                    <LoginButton type="submit" onClick={handleSubmit}>Fazer login</LoginButton>
+                    <LoginButton type="submit" onClick={handleCreate}>Criar usuário</LoginButton>
                 </form>
             </Contents>
             
