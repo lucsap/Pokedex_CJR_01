@@ -37,13 +37,13 @@ function Login() {
             <Titles title={"Login"} />
             <LoginStyles>Cadastre-se ou faça Login</LoginStyles>
             <Contents>
-                <LoginLabel placeholder="" onChange="">Entrar: </LoginLabel>
+                <LoginLabel placeholder="" onChange="">Entrar </LoginLabel>
                 <Input
                 type="text"
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 />
-                <LoginLabel >Criar conta: </LoginLabel>
+                <LoginLabel >Criar conta </LoginLabel>
                 <Input
                 type="text"
                 value={criar}

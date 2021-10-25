@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const LoginStyles = styled.h1`
   color: white;
+  margin-top: 10rem;
   text-align: center;
   align-content: center;
   display: inline-block;
@@ -13,6 +14,7 @@ export const LoginLabel = styled.div`
 `
 export const Input = styled.input`
   border-radius: 0.3rem;
+  margin: 1em;
 `
 
 export const LoginButton = styled.div`
@@ -26,7 +28,8 @@ export const LoginButton = styled.div`
   cursor: pointer;
   text-decoration: black;
   &:hover {
-    background-color: #ffbf00;
+    background-color: black;
+    color: white;
   }
 `;
 
