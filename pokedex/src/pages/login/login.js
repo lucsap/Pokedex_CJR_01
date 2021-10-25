@@ -27,7 +27,9 @@ function Login() {
         .then((resp)=>{
             window.alert('deu bom')
             setUsers(resp.data)
-        }).catch((error)=>(console.log()))
+        }).catch((err)=>(
+            window.alert("Ocorreu um erro" + err)
+        ))
     }
 
     return (
