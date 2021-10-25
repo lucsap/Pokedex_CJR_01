@@ -31,7 +31,6 @@ export const A = styled.a`
 export const Exit = styled.div`
     font-size: 1.6rem;
     display: inline-block;
-    margin-top: 1rem;
 `
 
 
