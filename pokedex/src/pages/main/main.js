@@ -4,11 +4,7 @@ import Pokemon from '../../components/Pokemon';
 import Titles from '../../components/helmet';
 import Navbar from '../../components/navbar';
 import { CgPokemon } from 'react-icons/cg';
-import { PageInput } from './styles_main';
-
-const Hi = styled.div`
-  color: #82b0a6;
-`
+import { PageInput, Hi } from './styles_main';
 
 function Main(){
       const [pages,setPage] = useState(1)
@@ -105,7 +101,6 @@ function Main(){
           </Hi>
         </div>
         <Titles title={"Pokedex - Home"} />
-        <h1>Pokédex</h1>
         <PageInput type="button"  onClick={prevPage}> &larr; Página anterior </PageInput>
         <PageInput type="button" onClick={nextPage}> Próxima página &rarr; </PageInput>
         <br/>

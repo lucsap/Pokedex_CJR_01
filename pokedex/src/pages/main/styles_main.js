@@ -14,3 +14,7 @@ export const PageInput = styled.div`
     background-color: #ffbf00;
   }
 `;
+
+export const Hi = styled.div`
+  color: #82b0a6;
+`
