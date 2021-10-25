@@ -6,6 +6,10 @@ import Navbar from '../../components/navbar';
 import { CgPokemon } from 'react-icons/cg';
 import { PageInput } from './styles_main';
 
+const Hi = styled.div`
+  color: #82b0a6;
+`
+
 function Main(){
       const [pages,setPage] = useState(1)
       const [pokemons,setPokemon] = useState([])
@@ -93,8 +97,12 @@ function Main(){
           </ul>
         </div> */}
         <div>
+        <Titles title={"Pokedex - Home"} />
           <Navbar us={isLogged}/>
-          <h2>Olá {user}!</h2>
+          <Hi>
+            <h2>Olá {user}!</h2>
+            <h1>Pokédex</h1>
+          </Hi>
         </div>
         <Titles title={"Pokedex - Home"} />
         <h1>Pokédex</h1>

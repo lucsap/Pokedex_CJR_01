@@ -48,8 +48,10 @@ function Login() {
                 />
                 <br/>
                 <br/>
-                <LoginButton onClick={handleSubmit}>Fazer login</LoginButton>
-                <LoginButton onClick={handleCreate}>Criar usuário</LoginButton>
+                <form method="get" action="../main/main">
+                    <button type="submit" onClick={handleSubmit}>Fazer login</button>
+                    <button type="submit" onClick={handleCreate}>Criar usuário</button>
+                </form>
             </Contents>
             
         </div>

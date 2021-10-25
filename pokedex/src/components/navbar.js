@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { CgPokemon, CgProfile } from 'react-icons/cg';
+import { CgProfile } from 'react-icons/cg';
 import { IoExitOutline,  IoHomeOutline} from "react-icons/io5";
 
 export const Menu = styled.header`
@@ -20,13 +20,23 @@ export const A = styled.a`
     padding: 1rem 2rem;
 `
 
+export const Exit = styled.div`
+    font-Size: 1.6rem;
+    display: inline-block;
+    margin-top: 1rem;
+    
+`
+
+
 function Navbar(props) {
     return(
         <Menu>
             <ul>
-                <A href="../main">Início</A>
-                <A href="../pokemons">Perfil</A>
-                <A href="../login">Logar/Sair</A>
+                <A href="../main"><IoHomeOutline/> Início</A>
+                <A href="../pokemons"><CgProfile/> Perfil</A>
+                <A href="../login"><Exit>
+                    <IoExitOutline />
+                </Exit> Logar/Sair</A>
             </ul>
         </Menu>
     )
