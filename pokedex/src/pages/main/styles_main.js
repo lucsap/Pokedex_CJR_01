@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import styled from "styled-components";
+
 export const PageInput = styled.div`
   background-color: rgb(255,0,68);
   color: black;
@@ -11,7 +13,8 @@ export const PageInput = styled.div`
   cursor: pointer;
   text-decoration: black;
   &:hover {
-    background-color: #ffbf00;
+    background-color: black;#ffbf00;
+    color: white;
   }
 `;
 
