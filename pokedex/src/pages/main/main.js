@@ -21,6 +21,10 @@ const Input = styled.div`
   }
 `;
 
+const Hi = styled.div`
+  color: #82b0a6;
+`
+
 function Main(){
       const [pages,setPage] = useState(1)
       const [pokemons,setPokemon] = useState([])
@@ -108,11 +112,13 @@ function Main(){
           </ul>
         </div> */}
         <div>
-          <Navbar us={isLogged}/>
-          <h2>Olá {user}!</h2>
-        </div>
         <Titles title={"Pokedex - Home"} />
-        <h1>Pokédex</h1>
+          <Navbar us={isLogged}/>
+          <Hi>
+            <h2>Olá {user}!</h2>
+            <h1>Pokédex</h1>
+          </Hi>
+        </div>
         <Input type="button"  onClick={prevPage}> &larr; Página anterior </Input>
         <Input type="button" onClick={nextPage}> Próxima página &rarr; </Input>
         <br/>
