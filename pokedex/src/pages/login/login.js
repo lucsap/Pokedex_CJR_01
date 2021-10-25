@@ -2,9 +2,10 @@ import api from '../../resources/api';
 import Titles from "../../components/helmet"
 import { useState } from 'react';
 import { LoginStyles, Contents , LoginButton, Input, LoginLabel } from './styles_login'
+import { useHistory } from "react-router-dom"
 
 function Login() {
-
+    let history = useHistory()
     const [user, setUsers] = useState("")
     const [value, setValue] = useState("")
     const [criar, setCriar] = useState("")
@@ -15,8 +16,8 @@ function Login() {
             console.log(resp.data.user.username)
             setUsers(resp.data.user.username)
             localStorage.setItem('user', value);
+            history.push("/main")
         }).catch((err)=>{
-            // redirecionar página
             window.alert("Ocorreu um erro" + err)
         })
     }
