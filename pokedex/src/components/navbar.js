@@ -8,7 +8,7 @@ export const Menu = styled.header`
     text-align: right;
     text-decoration: none;
     background-color: rgb(255,0,68);
-    /* #border-radius: 1rem; */
+    #border-radius: 1rem;
     border: 1px solid white;
     margin: 1rem;
     display: inline-block;
@@ -31,11 +31,9 @@ export const A = styled.a`
 `
 
 export const Exit = styled.div`
-    display: inline-block;
-`
-export const NavDiv = styled.h1`
     font-size: 1.6rem;
-    font-color: black;
+    display: inline-block;
+    margin-top: 1rem;
 `
     
 function Navbar(props) {
