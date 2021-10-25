@@ -11,4 +11,4 @@ const Titles = ({title}) => {
     )
   }
 
-  export default Titles
+export default Titles
