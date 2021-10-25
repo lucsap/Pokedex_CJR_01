@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 
-export const LoginStyles = styled.div`
-text-size: 200px;
+export const LoginStyles = styled.h1`
   color: white;
   text-align: center;
   align-content: center;
+  display: inline-block;
+  width: 100%;
 `;
+
+export const LoginLabel = styled.div`
+
+`
 
 export const LoginButton = styled.div`
   background-color: rgb(255,0,68);
