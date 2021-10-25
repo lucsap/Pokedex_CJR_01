@@ -5,14 +5,14 @@ import { IoExitOutline,  IoHomeOutline} from "react-icons/io5";
 export const Menu = styled.header`
     text-align: right;
     text-decoration: none;
-    background-color: #F5E750;
+    background-color: #82b0a6;
     border-radius: 1rem;
     margin: 1rem;
 `
 
 export const A = styled.a`
     display: inline-block;
-    color: blue;
+    color: #2d2d2d;
     font-size: 1.3rem;
     text-decoration: none;
     text-align: right;
@@ -20,14 +20,13 @@ export const A = styled.a`
     padding: 1rem 2rem;
 `
 
-function Navbar() {
-        
+function Navbar(props) {
     return(
         <Menu>
             <ul>
                 <A href="../main">Início</A>
                 <A href="../pokemons">Perfil</A>
-                <A href="../login">Sair</A>
+                <A href="../login">Logar/Sair</A>
             </ul>
         </Menu>
     )
