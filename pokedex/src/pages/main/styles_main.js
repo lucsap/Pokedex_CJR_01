@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import styled from "styled-components";
-
 export const PageInput = styled.div`
   background-color: rgb(255,0,68);
   color: black;
