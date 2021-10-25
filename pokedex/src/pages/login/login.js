@@ -1,7 +1,7 @@
 import api from '../../resources/api';
 import Titles from "../../components/helmet"
 import { useState } from 'react';
-import { LoginStyles, Contents } from './styles_login'
+import { LoginStyles, Contents , LoginButton } from './styles_login'
 
 function Login() {
 
@@ -30,7 +30,7 @@ function Login() {
     }
 
     return (
-        <div className="bodyLogin">
+        <div className="App">
             <Titles title={"Login"} />
             <LoginStyles>Cadastre-se ou faça Login</LoginStyles>
             <Contents>
@@ -48,8 +48,8 @@ function Login() {
                 />
                 <br/>
                 <br/>
-                <button onClick={handleSubmit}>Fazer login</button>
-                <button onClick={handleCreate}>Criar usuário</button>
+                <LoginButton onClick={handleSubmit}>Fazer login</LoginButton>
+                <LoginButton onClick={handleCreate}>Criar usuário</LoginButton>
             </Contents>
             
         </div>
