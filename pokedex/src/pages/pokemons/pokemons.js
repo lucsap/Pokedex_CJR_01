@@ -12,7 +12,7 @@ export default function Pokemons(props) {
     const user = localStorage.getItem('user'); // tem o usuário logado
 
     function getFavPokemons(){
-        api.get("https://pokedex20201.herokuapp.com/users/"+user)
+        api.get("/users/"+user)
         .then((resp)=>{
           console.log("Debuglist",resp)
           setFvpkm(resp.data.pokemons)
