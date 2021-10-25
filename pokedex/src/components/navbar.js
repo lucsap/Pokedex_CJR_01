@@ -6,7 +6,7 @@ export const Menu = styled.header`
     text-align: right;
     text-decoration: none;
     background-color: rgb(255,0,68);
-    #border-radius: 1rem;
+    border-radius: 1rem;
     border: 1px solid white;
     margin: 1rem;
     display: inline-block;

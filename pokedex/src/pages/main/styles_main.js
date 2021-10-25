@@ -11,7 +11,7 @@ export const PageInput = styled.div`
   cursor: pointer;
   text-decoration: black;
   &:hover {
-    background-color: black;#ffbf00;
+    background-color: #ffbf00;
     color: white;
   }
 `;
