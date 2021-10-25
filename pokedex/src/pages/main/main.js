@@ -4,22 +4,7 @@ import Pokemon from '../../components/Pokemon';
 import Titles from '../../components/helmet';
 import Navbar from '../../components/navbar';
 import { CgPokemon } from 'react-icons/cg';
-import styled from 'styled-components';
-
-const Input = styled.div`
-  background-color: rgb(255,0,68);
-  color: black;
-  padding: 10px;
-  border: 2px solid black;
-  border-radius: 10px;
-  display: inline-block;
-  margin: 5px;
-  cursor: pointer;
-  text-decoration: black;
-  &:hover {
-    background-color: #ffbf00;
-  }
-`;
+import { PageInput } from './styles_main';
 
 function Main(){
       const [pages,setPage] = useState(1)
@@ -113,14 +98,14 @@ function Main(){
         </div>
         <Titles title={"Pokedex - Home"} />
         <h1>Pokédex</h1>
-        <Input type="button"  onClick={prevPage}> &larr; Página anterior </Input>
-        <Input type="button" onClick={nextPage}> Próxima página &rarr; </Input>
+        <PageInput type="button"  onClick={prevPage}> &larr; Página anterior </PageInput>
+        <PageInput type="button" onClick={nextPage}> Próxima página &rarr; </PageInput>
         <br/>
         <br/>
         <Pokemon pk={pokemons} us={user}/>
         <br/>
-        <Input type="button"  onClick={prevPage}> &larr; Página anterior </Input>
-        <Input type="button" onClick={nextPage}> Próxima página &rarr; </Input>
+        <PageInput type="button"  onClick={prevPage}> &larr; Página anterior </PageInput>
+        <PageInput type="button" onClick={nextPage}> Próxima página &rarr; </PageInput>
       </div>
   )
 }
