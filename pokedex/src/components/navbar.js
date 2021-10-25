@@ -1,13 +1,16 @@
 import styled from 'styled-components'
-import { CgProfile } from 'react-icons/cg';
+import { CgPokemon, CgProfile } from 'react-icons/cg';
 import { IoExitOutline,  IoHomeOutline} from "react-icons/io5";
 
 export const Menu = styled.header`
     text-align: right;
     text-decoration: none;
-    background-color: #82b0a6;
-    border-radius: 1rem;
+    background-color: rgb(255,0,68);
+    #border-radius: 1rem;
+    border: 1px solid white;
     margin: 1rem;
+    display: inline-block;
+    width: 100%;
 `
 
 export const A = styled.a`
@@ -18,6 +21,11 @@ export const A = styled.a`
     text-align: right;
     margin: 1rem;
     padding: 1rem 2rem;
+    display: inline-block;
+    &:hover{
+        background-color: white;
+        border-radius: 5px;
+    }
 `
 
 export const Exit = styled.div`
