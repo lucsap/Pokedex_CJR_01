@@ -40,7 +40,7 @@ function Login() {
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 />
-                <label>Criar conta: </label>
+                <label >Criar conta: </label>
                 <input
                 type="text"
                 value={criar}
